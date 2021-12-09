@@ -1,5 +1,5 @@
 from random import randint
-
+from sys import exit
 
 class Set:
     def __init__(self, n):
@@ -21,3 +21,14 @@ class Set:
 
     def show_summa(self):
         print(self.summa())
+
+
+def main():
+    try:
+        array = Set(int(input("Введіть розмір массиву: ")))
+        array.create_list()
+        return array.show_list(), array.show_summa()
+    except ValueError:
+        exit("введіть ціле число")
+
+main()
